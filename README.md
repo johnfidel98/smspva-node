@@ -13,9 +13,11 @@ var number = await client.getNumber({
   country:"RU", //list of all countries and optIds can be found at http://smspva.com/new_theme_api.html
   optId: 65 //yahoo
 });
+```
 
-/**
+
 number looks like
+```
 {
   response: '1',
   number: '1234567890',
@@ -34,9 +36,10 @@ number looks like
   callForwarding: false,
   goipSlotId: -1
 }
-**/
 ```
+
 ### Receiving a sms
+
 ```
   var code = await client.getCode({
     country:"RU",
