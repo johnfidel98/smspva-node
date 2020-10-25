@@ -4,7 +4,7 @@ A Node.js class for receiving sms codes with http://smspva.com using request-pro
 ## Usage
 ### Initialization
 ```
-const SMSPVAClient = require('./smspva.js');
+const SMSPVAClient = require('smspvaclient/smspva');
 const client = new SMSPVAClient('yourApiKey');
 ```
 ### Getting a number
