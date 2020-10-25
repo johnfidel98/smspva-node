@@ -16,7 +16,6 @@ class SMSPVAClient {
     } catch (e) { throw "opt id is not a number"; }
 
     return JSON.parse(await request({
-      proxy:"http://127.0.0.1:8888",
       url:"http://smspva.com/priemnik.php?metod=get_number&country="+config.country+"&service=opt"+config.optId+"&apikey="+this.apiKey
     }));
   }
@@ -36,7 +35,6 @@ class SMSPVAClient {
     } catch (e) { throw "number id is not a number"; }
 
     return JSON.parse(await request({
-      proxy:"http://127.0.0.1:8888",
       url:"http://smspva.com/priemnik.php?metod=get_sms&country="+config.country+"&service=opt"+config.optId+"&id="+config.id+"&apikey="+this.apiKey
     })).sms;
   }
