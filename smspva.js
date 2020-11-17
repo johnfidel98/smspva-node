@@ -20,6 +20,24 @@ class SMSPVAClient {
     }));
   }
 
+  async banNumber(config){
+    if(!config.service) throw "no country specified";
+    if(!config.id) throw "no id specified";
+    if(!config.optId) throw "no opt id specified";
+
+    try {
+      parseInt(config.id)
+    } catch (e) { throw "id is not a number"; }
+
+    try {
+      parseInt(config.optId)
+    } catch (e) { throw "optId is not a number"; }
+
+    return JSON.parse(await request({
+      url:"http://smspva.com/priemnik.php?metod=ban&id="+config.id+"&service=opt"+config.optId+"&apikey="+this.apiKey
+    }));
+  }
+
   async getCode(config){
     if(!config.country) { throw "no country specified"; }
     if(!countries.includes(config.country)) throw "unknown country "+config.country;
